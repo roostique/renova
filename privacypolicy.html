@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Renovation Calculator</title>
+  <style>
+    :root {
+      --bg: #0d0f1a;
+      --surface: #13172a;
+      --border: rgba(255,255,255,0.07);
+      --accent: #f97316;
+      --accent2: #fb923c;
+      --text: #e8eaf0;
+      --muted: #8892a4;
+      --heading: #ffffff;
+      --tag-bg: rgba(249,115,22,0.12);
+      --tag-color: #fb923c;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #0d0f1a 0%, #121830 50%, #0a1020 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 72px 24px 56px;
+      text-align: center;
+    }
+
+    .hero-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--accent), #ec4899);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      margin: 0 auto 24px;
+      box-shadow: 0 12px 40px rgba(249,115,22,0.35);
+    }
+
+    .hero h1 {
+      font-size: clamp(26px, 5vw, 38px);
+      font-weight: 800;
+      color: var(--heading);
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 18px;
+      background: var(--tag-bg);
+      color: var(--tag-color);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      border: 1px solid rgba(249,115,22,0.25);
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* ── Summary cards ── */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-bottom: 52px;
+    }
+
+    .summary-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .summary-card .icon {
+      font-size: 24px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .summary-card .label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--heading);
+    }
+
+    .summary-card .desc {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 44px;
+    }
+
+    section h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--heading);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section p {
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    section ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    section ul li {
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    section ul li strong {
+      color: var(--heading);
+    }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: linear-gradient(135deg, rgba(249,115,22,0.08), rgba(251,146,60,0.05));
+      border: 1px solid rgba(249,115,22,0.2);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
+    }
+
+    .highlight p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .highlight strong {
+      color: var(--accent2);
+    }
+
+    /* ── Contact box ── */
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      border: none;
+      padding: 0;
+      margin-bottom: 8px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .contact-box a {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent), #ec4899);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 12px 28px;
+      border-radius: 100px;
+      transition: opacity 0.2s;
+    }
+
+    .contact-box a:hover { opacity: 0.85; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 28px 24px 40px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    a { color: var(--accent2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-icon">🔨</div>
+    <h1>Privacy Policy</h1>
+    <p>Renovation Calculator &mdash; iOS App</p>
+    <div class="tag">Effective date: February 19, 2026</div>
+  </div>
+
+  <div class="container">
+
+    <!-- At-a-glance summary -->
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="icon">📱</div>
+        <div>
+          <div class="label">Stored on device only</div>
+          <div class="desc">All your data lives on your iPhone. We never upload it.</div>
+        </div>
+      </div>
+      <div class="summary-card">
+        <div class="icon">🚫</div>
+        <div>
+          <div class="label">No tracking</div>
+          <div class="desc">No analytics, no advertising SDKs, no fingerprinting.</div>
+        </div>
+      </div>
+      <div class="summary-card">
+        <div class="icon">🍎</div>
+        <div>
+          <div class="label">Purchases via Apple</div>
+          <div class="desc">Payments are handled entirely by Apple StoreKit.</div>
+        </div>
+      </div>
+      <div class="summary-card">
+        <div class="icon">🔒</div>
+        <div>
+          <div class="label">No third-party SDKs</div>
+          <div class="desc">We don't integrate any external analytics or ad networks.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1. Introduction -->
+    <section>
+      <h2>1. Introduction</h2>
+      <p>
+        Renovation Calculator ("we", "our", or "us") is a personal productivity app that helps you
+        plan, track, and export renovation projects. This Privacy Policy explains what information
+        the app processes, how it is stored, and your rights as a user.
+      </p>
+      <div class="highlight">
+        <p>
+          <strong>Short version:</strong> Renovation Calculator does not collect or transmit any
+          personal data to external servers. Everything you enter stays on your device.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. Data We Store -->
+    <section>
+      <h2>2. Data Stored on Your Device</h2>
+      <p>
+        All data created inside the app is stored locally on your device using iOS
+        <strong>UserDefaults</strong> and the device file system. This includes:
+      </p>
+      <ul>
+        <li><strong>Projects &amp; items</strong> — names, descriptions, costs, categories, completion status, and dates you enter.</li>
+        <li><strong>Project photos</strong> — images you optionally attach to projects, stored as compressed JPEG data on-device.</li>
+        <li><strong>Custom categories</strong> — any category names and emoji you create.</li>
+        <li><strong>App preferences</strong> — chosen language (English / Russian / Kazakh), currency, color theme, and export count for the free tier.</li>
+        <li><strong>Review tracking counters</strong> — a local count of app launches and items added, used only to decide when to prompt the native iOS "Rate the App" dialog. This data never leaves your device.</li>
+      </ul>
+      <p>
+        None of this data is synced to iCloud, transmitted to our servers, or shared with any
+        third party.
+      </p>
+    </section>
+
+    <!-- 3. In-App Purchases -->
+    <section>
+      <h2>3. In-App Purchases (PRO Subscription)</h2>
+      <p>
+        Renovation Calculator offers an optional PRO subscription that unlocks premium themes,
+        unlimited exports, and full category management. Purchases are processed entirely through
+        <strong>Apple StoreKit</strong>. We never see, store, or handle your payment card details.
+      </p>
+      <p>
+        Apple's handling of purchase data is governed by the
+        <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a>.
+        The only information we receive from StoreKit is a verified transaction record confirming
+        whether a valid subscription is active — no payment details, no Apple ID, no personal
+        identifiers.
+      </p>
+    </section>
+
+    <!-- 4. Feedback -->
+    <section>
+      <h2>4. Feedback</h2>
+      <p>
+        The in-app feedback form opens your device's native <strong>Mail app</strong> via a
+        <code>mailto:</code> link pre-filled with your message. We do not intercept, store, or
+        process the message before it reaches your Mail app.
+      </p>
+      <p>
+        When you choose to send an email, the content you type and your email address (as
+        configured in your Mail app) will be sent to
+        <a href="mailto:feedback@renovationcalculator.app">feedback@renovationcalculator.app</a>.
+        This information is used only to respond to your feedback and is not shared with anyone.
+      </p>
+    </section>
+
+    <!-- 5. Exported Files -->
+    <section>
+      <h2>5. Exported Files (PDF, CSV, JSON)</h2>
+      <p>
+        The export feature generates files from your local project data and saves them to a
+        temporary directory on your device. Files are shared only when you explicitly use the
+        iOS share sheet — for example, to save to Files, send via AirDrop, or email to yourself.
+        We have no access to files you export or where you send them.
+      </p>
+    </section>
+
+    <!-- 6. No Analytics or Tracking -->
+    <section>
+      <h2>6. No Analytics or Tracking</h2>
+      <p>
+        Renovation Calculator contains <strong>no third-party analytics SDKs</strong> (such as
+        Firebase, Mixpanel, or Amplitude), <strong>no advertising frameworks</strong>, and
+        <strong>no crash-reporting services</strong>. We do not track your behaviour in the app,
+        build user profiles, or monetise your data in any way.
+      </p>
+    </section>
+
+    <!-- 7. Permissions -->
+    <section>
+      <h2>7. iOS Permissions</h2>
+      <p>
+        The app may request the following system permission:
+      </p>
+      <ul>
+        <li>
+          <strong>Photo Library</strong> — requested only when you choose to attach a photo to a
+          project. Photos are accessed via the system photo picker (<code>PHPickerViewController</code>),
+          which gives you full control over which image to share. The selected image is stored
+          locally within the app only.
+        </li>
+      </ul>
+      <p>
+        No other permissions (location, contacts, microphone, camera, etc.) are requested.
+      </p>
+    </section>
+
+    <!-- 8. Children -->
+    <section>
+      <h2>8. Children's Privacy</h2>
+      <p>
+        Renovation Calculator is not directed at children under 13 years of age and does not
+        knowingly collect any personal information from children. The app does not collect
+        personal data from anyone, regardless of age.
+      </p>
+    </section>
+
+    <!-- 9. Changes -->
+    <section>
+      <h2>9. Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. When we do, we will update the
+        effective date at the top of this page. We encourage you to review this policy
+        periodically. Continued use of the app after changes constitutes acceptance of the
+        updated policy.
+      </p>
+    </section>
+
+    <!-- 10. Contact -->
+    <div class="contact-box">
+      <h2>10. Contact Us</h2>
+      <p>
+        Have a privacy question? We're happy to help.
+      </p>
+      <a href="mailto:feedback@renovationcalculator.app">feedback@renovationcalculator.app</a>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2026 Renovation Calculator &mdash; All rights reserved.
+  </footer>
+
+</body>
+</html>
